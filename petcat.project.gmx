@@ -14,6 +14,7 @@
       <sprite>sprites\rankbarinner</sprite>
       <sprite>sprites\catborder</sprite>
       <sprite>sprites\catmenu</sprite>
+      <sprite>sprites\back</sprite>
       <sprite>sprites\catrank</sprite>
       <sprite>sprites\nextcat</sprite>
     </sprites>
@@ -32,6 +33,7 @@
     <object>objects\cat_obj</object>
     <object>objects\clickspark_obj</object>
     <object>objects\catmenu_obj</object>
+    <object>objects\back_button</object>
     <object>objects\catborder_obj</object>
     <object>objects\catrankoutter_obj</object>
     <object>objects\catcoin_obj</object>
@@ -41,7 +43,8 @@
     <object>objects\healthbar_obj</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\main</room>
+    <room>rooms\menu</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
