@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://src/Global.gd"
+Save="*res://save.gd"
 
 [display]
 
@@ -32,4 +33,4 @@ window/size/test_height=720
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://src/default_env.tres"

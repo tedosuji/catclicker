@@ -2,6 +2,9 @@ extends Node2D
 
 onready var silvercoin = $bg/catcoin_0/silvercoin
 
+func _ready():
+	Global.cookies = save.loadValue("Main", "Cookie", 0)
+
 func _on_catbutton_pressed():
 	Global.cookies += 1
 	silvercoin.text = str(Global.cookies)
@@ -10,6 +13,7 @@ func _on_catbutton_pressed():
 func _on_Timer_timeout():
 	Global.cookies += Global.cookiesPerSecond
 	silvercoin.text = str(Global.cookies)
+	save.saveValue("Main", "Cookies", cookies)
 
 #this function should subtract silver Global.cookies
 func _on_upgradebutton_pressed():
@@ -19,6 +23,8 @@ func _on_upgradebutton_pressed():
 		silvercoin.text = str(Global.cookies)
 		Global.cookieUpgrade = Global.cookieUpgrade*Global.cookieUpgradeScaling
 		Global.cookieUpgradeScaling += 1
+		
+
 
 #this function checks if there is enough Global.cookies for transactions
 #if there isnt, return false
