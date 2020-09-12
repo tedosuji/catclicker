@@ -10,3 +10,16 @@ pwd
 ##once in correct folder
 ##this command will pull & overwrite anything you have from master branch
 git pull origin master
+
+##committing changed files to push/merge to master
+git commit -am "commit message here, spaces allowed"
+git push origin master
+
+##create a new branch for working, no spaces allowed in the name
+git branch -b "branch_name"
+
+##how to switch branches, no quotes or spaces
+git checkout branch_name
+
+#if using a branch, switch back to master, no quotes or spaces
+git merge branch_name
