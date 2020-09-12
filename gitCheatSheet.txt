@@ -1,0 +1,2 @@
+##this command will pull & overwrite anything you have from master branch
+git pull origin master
