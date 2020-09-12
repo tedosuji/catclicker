@@ -1,33 +1,71 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://src/Button.gd" type="Script" id=1]
+[ext_resource path="res://assets/background/background2.png" type="Texture" id=1]
 [ext_resource path="res://assets/background/background1.png" type="Texture" id=2]
-[ext_resource path="res://src/RichTextLabel.gd" type="Script" id=3]
+[ext_resource path="res://assets/background/background3.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/cat.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/catpress.png" type="Texture" id=5]
+[ext_resource path="res://src/Main.gd" type="Script" id=6]
+[ext_resource path="res://assets/sprites/catcoin_0.png" type="Texture" id=7]
+[ext_resource path="res://assets/font/JoystickBold-62LA.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+outline_size = 3
+outline_color = Color( 0.611765, 0.588235, 0.588235, 1 )
+font_data = ExtResource( 8 )
 
 [node name="Main" type="Node2D"]
+script = ExtResource( 6 )
 
-[node name="background1" type="Sprite" parent="."]
-position = Vector2( 519.076, 320.68 )
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 164.837, 346.971 )
+scale = Vector2( 0.526719, 0.526719 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Button" type="Button" parent="."]
-margin_left = 390.53
-margin_top = 277.47
-margin_right = 615.53
-margin_bottom = 346.47
-action_mode = 0
-text = "push me"
-script = ExtResource( 1 )
+[node name="topbar" type="Sprite" parent="bg"]
+position = Vector2( 41.1072, 37.1508 )
+scale = Vector2( 0.731646, 0.731646 )
+texture = ExtResource( 1 )
+
+[node name="rankbar" type="Sprite" parent="bg"]
+visible = false
+position = Vector2( 52.0031, -89.3348 )
+scale = Vector2( 0.603748, 0.603748 )
+texture = ExtResource( 3 )
+
+[node name="catcoin_0" type="Sprite" parent="bg"]
+position = Vector2( -81.0234, -596.876 )
+scale = Vector2( 0.827103, 0.827103 )
+texture = ExtResource( 7 )
+
+[node name="silvercoin" type="Label" parent="bg/catcoin_0"]
+margin_left = -135.843
+margin_top = -34.4663
+margin_right = 138.157
+margin_bottom = 34.5337
+custom_fonts/font = SubResource( 1 )
+text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 795.826
-margin_top = 93.1644
-margin_right = 835.826
-margin_bottom = 133.164
-script = ExtResource( 3 )
+[node name="catbutton" type="TextureButton" parent="."]
+margin_left = 40.6335
+margin_top = 174.652
+margin_right = 315.634
+margin_bottom = 517.652
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+[connection signal="pressed" from="catbutton" to="." method="_on_catbutton_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
