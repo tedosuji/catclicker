@@ -10,3 +10,6 @@ pwd
 ##once in correct folder
 ##this command will pull & overwrite anything you have from master branch
 git pull origin master
+
+
+testing error
