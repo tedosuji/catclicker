@@ -67,11 +67,12 @@ __meta__ = {
 }
 
 [node name="upgradebutton" type="TextureButton" parent="."]
-margin_left = 137.183
-margin_top = 611.504
-margin_right = 322.183
-margin_bottom = 766.504
+margin_left = 248.009
+margin_top = 632.337
+margin_right = 345.009
+margin_bottom = 713.337
 texture_normal = ExtResource( 9 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
