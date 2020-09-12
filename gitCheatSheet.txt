@@ -23,3 +23,5 @@ git checkout branch_name
 
 #if using a branch, switch back to master, no quotes or spaces
 git merge branch_name
+
+scott is an idiot
