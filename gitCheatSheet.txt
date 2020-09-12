@@ -1,2 +1,12 @@
+##check to make sure you're in the catclicker folder
+pwd
+
+##if it's not reading something like ~/Documents/Git/catclicker, do this command to move into the folder
+cd ~/Documents/Git/catclicker
+
+##check again the folder status for MINGW64 ~/Documents/Git/catclicker (master)
+pwd
+
+##once in correct folder
 ##this command will pull & overwrite anything you have from master branch
 git pull origin master
