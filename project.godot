@@ -22,7 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://src/Global.gd"
-Save="*res://save.gd"
+Save="*res://src/save.gd"
 
 [display]
 
