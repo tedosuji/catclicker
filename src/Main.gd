@@ -15,20 +15,7 @@ func _on_Timer_timeout():
 	silvercoin.text = str(Global.cookies)
 	Save.saveValue("Main", "Cookies", Global.cookies)
 
-#this function should subtract silver Global.cookies
-func _on_upgradebutton_pressed():
-	var skip = _enoughCookieCheck(Global.cookieUpgrade)
-	if skip == true:
-		Global.cookies -= Global.cookieUpgrade
-		silvercoin.text = str(Global.cookies)
-		Global.cookieUpgrade = Global.cookieUpgrade*Global.cookieUpgradeScaling
-		Global.cookieUpgradeScaling += 1
-			
 
-#this function checks if there is enough Global.cookies for transactions
-#if there isnt, return false
-func _enoughCookieCheck(check):
-	if Global.cookies - check < 0:
-		return false
-	else:
-		return true
+func _switchToUpgradeMenu():
+	get_tree().change_scene("res://src/upgradeMenu.tscn")
+	
