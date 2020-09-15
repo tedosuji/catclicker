@@ -1,0 +1,8 @@
+1. Cookie count not loading on menu
+
+2. Create function in global to track cookie count
+2a. Create function to load cookie counts on other scenes for swapping?
+
+3. increment cookies on global perhaps? only do clicks on the main.gd
+
+4. 
