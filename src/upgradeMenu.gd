@@ -9,6 +9,7 @@ onready var silvercoin = $bg/catcoin_0/silvercoin
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.cookies = Save.loadValue("Main","Cookies", Global.cookies)
+	silvercoin.text = str(Global.cookies)
 
 #change scene function
 func _returnToGame():

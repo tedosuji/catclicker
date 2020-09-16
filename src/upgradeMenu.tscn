@@ -54,6 +54,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="upgradeCost" type="Sprite" parent="bg"]
+position = Vector2( -55.0832, 626.685 )
+scale = Vector2( 0.827103, 0.827103 )
+texture = ExtResource( 8 )
+
+[node name="upgradeText" type="Label" parent="bg/upgradeCost"]
+margin_left = -135.843
+margin_top = -34.4663
+margin_right = 138.157
+margin_bottom = 34.5337
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="upgradeButton" type="TextureButton" parent="."]
 margin_left = 188.997
 margin_top = 411.291
@@ -76,9 +92,5 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
 [connection signal="pressed" from="upgradeButton" to="." method="_on_upgradeButton_pressed"]
 [connection signal="pressed" from="returnButton" to="." method="_returnToGame"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
