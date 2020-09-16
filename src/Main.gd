@@ -16,17 +16,10 @@ func _on_Timer_timeout():
 	silvercoin.text = str(Global.cookies)
 	Global._saveCurrentValues()
 
-
 func _switchToUpgradeMenu():
 	get_tree().change_scene("res://src/upgradeMenu.tscn")
 	Global._saveCurrentValues()
 	
-
-
-
-
-
-
 
 func _on_closeshop_pressed():
 	$upgrademenu.hide()
@@ -34,4 +27,3 @@ func _on_closeshop_pressed():
 
 func _on_shopbutton_pressed():
 	$upgrademenu.show()
->>>>>>> 1f7ff03... pop up menu added
