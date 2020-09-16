@@ -14,9 +14,10 @@ func _on_catbutton_pressed():
 func _on_Timer_timeout():
 	Global.cookies += Global.cookiesPerSecond
 	silvercoin.text = str(Global.cookies)
-	Save.saveValue("Main", "Cookies", Global.cookies)
+	Global._saveCurrentValues()
 
 
 func _switchToUpgradeMenu():
 	get_tree().change_scene("res://src/upgradeMenu.tscn")
+	Global._saveCurrentValues()
 	

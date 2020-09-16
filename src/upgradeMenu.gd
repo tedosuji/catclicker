@@ -1,6 +1,8 @@
 extends Node2D
 
+#declaring text representation
 onready var silvercoin = $bg/catcoin_0/silvercoin
+onready var upgradeText = $bg/upgradeCost/upgradeText
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -8,21 +10,25 @@ onready var silvercoin = $bg/catcoin_0/silvercoin
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Global.cookies = Save.loadValue("Main","Cookies", Global.cookies)
+	Global._loadCurrentValues()
 	silvercoin.text = str(Global.cookies)
+	upgradeText.text = str(Global.cookieUpgrade)
 
 #change scene function
 func _returnToGame():
 	get_tree().change_scene("res://src/Main.tscn")
+	Global._saveCurrentValues()
 
 #this function should subtract silver Global.cookies
 func _on_upgradeButton_pressed():
 	var skip = _enoughCookieCheck(Global.cookieUpgrade)
 	if skip == true:
 		Global.cookies -= Global.cookieUpgrade
-		silvercoin.text = str(Global.cookies)
 		Global.cookieUpgrade = Global.cookieUpgrade*Global.cookieUpgradeScaling
-		Global.cookieUpgradeScaling += 1
+		silvercoin.text = str(Global.cookies)
+		upgradeText.text = str(Global.cookieUpgrade)
+		#Global.cookieUpgradeScaling += 1
+		
 
 #this function checks if there is enough Global.cookies for transactions
 func _enoughCookieCheck(check):
