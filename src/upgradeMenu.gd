@@ -23,8 +23,9 @@ func _on_Timer_timeout():
 
 #change scene function
 func _returnToGame():
-	get_tree().change_scene("res://src/Main.tscn")
 	Global._saveCurrentValues()
+	get_tree().change_scene("res://src/Main.tscn")
+
 
 #this function should subtract silver Global.cookies
 func _on_upgradeButton_pressed():

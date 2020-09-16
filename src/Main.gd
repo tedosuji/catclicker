@@ -17,8 +17,9 @@ func _on_Timer_timeout():
 	Global._saveCurrentValues()
 
 func _switchToUpgradeMenu():
-	get_tree().change_scene("res://src/upgradeMenu.tscn")
 	Global._saveCurrentValues()
+	get_tree().change_scene("res://src/upgradeMenu.tscn")
+	
 	
 
 func _on_closeshop_pressed():
