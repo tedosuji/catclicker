@@ -54,6 +54,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Timer" type="Timer" parent="bg/catcoin_0/silvercoin"]
+autostart = true
+
 [node name="upgradeCost" type="Sprite" parent="bg"]
 position = Vector2( -55.0832, 626.685 )
 scale = Vector2( 0.827103, 0.827103 )
@@ -92,5 +95,6 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="timeout" from="bg/catcoin_0/silvercoin/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="upgradeButton" to="." method="_on_upgradeButton_pressed"]
 [connection signal="pressed" from="returnButton" to="." method="_returnToGame"]

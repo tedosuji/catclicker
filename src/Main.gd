@@ -21,3 +21,17 @@ func _switchToUpgradeMenu():
 	get_tree().change_scene("res://src/upgradeMenu.tscn")
 	Global._saveCurrentValues()
 	
+
+
+
+
+
+
+
+func _on_closeshop_pressed():
+	$upgrademenu.hide()
+
+
+func _on_shopbutton_pressed():
+	$upgrademenu.show()
+>>>>>>> 1f7ff03... pop up menu added

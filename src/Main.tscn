@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/background/background2.png" type="Texture" id=1]
 [ext_resource path="res://assets/background/background1.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/sprites/catcoin_0.png" type="Texture" id=7]
 [ext_resource path="res://assets/font/JoystickBold-62LA.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://assets/sprites/nextcat_0.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/goldcoin.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -79,6 +80,47 @@ __meta__ = {
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="upgrademenu" type="PopupMenu" parent="."]
+margin_left = -24.0
+margin_top = 77.0
+margin_right = 384.0
+margin_bottom = 731.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background1" type="Sprite" parent="upgrademenu"]
+position = Vector2( 189.973, 502.91 )
+scale = Vector2( 0.52539, 0.52539 )
+texture = ExtResource( 2 )
+
+[node name="closeshop" type="TextureButton" parent="upgrademenu"]
+visible = false
+margin_left = 33.4539
+margin_top = 7.58484
+margin_right = 97.4539
+margin_bottom = 70.5848
+texture_normal = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shopbutton" type="TextureButton" parent="."]
+margin_left = 9.45395
+margin_top = 84.5848
+margin_right = 73.4539
+margin_bottom = 147.585
+texture_normal = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="catbutton" to="." method="_on_catbutton_pressed"]
 [connection signal="pressed" from="menuButton" to="." method="_switchToUpgradeMenu"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="index_pressed" from="upgrademenu" to="." method="_on_shopbutton_index_pressed"]
+[connection signal="pressed" from="upgrademenu/closeshop" to="." method="_on_shopbutton_pressed"]
+[connection signal="pressed" from="shopbutton" to="." method="_on_shopbutton_pressed"]
+[connection signal="pressed" from="shopbutton" to="." method="_on_TextureButton_pressed"]

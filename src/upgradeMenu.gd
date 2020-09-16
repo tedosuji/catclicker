@@ -8,11 +8,18 @@ onready var upgradeText = $bg/upgradeCost/upgradeText
 # var a = 2
 # var b = "text"
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global._loadCurrentValues()
 	silvercoin.text = str(Global.cookies)
 	upgradeText.text = str(Global.cookieUpgrade)
+
+func _on_Timer_timeout():
+	Global.cookies += Global.cookiesPerSecond
+	silvercoin.text = str(Global.cookies)
+	Save.saveValue("Main", "Cookies", Global.cookies)
 
 #change scene function
 func _returnToGame():

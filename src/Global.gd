@@ -6,6 +6,8 @@ var cookieUpgrade = 10
 var cookieUpgradeScaling = 2
 var cookiesPerSecond = 1
 
+
+
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
 		Save.saveValue("Main", "Cookies", Global.cookies)
@@ -13,6 +15,7 @@ func _notification(what):
 		Save.saveValue("Upgrades", "CookieUpgradeScaling", Global.cookieUpgradeScaling)
 		get_tree().quit() # default behavior
 
+<<<<<<< HEAD
 func _saveCurrentValues():
 	Save.saveValue("Main", "Cookies", Global.cookies)
 	Save.saveValue("Upgrades", "CookieUpgrade", Global.cookieUpgrade)
