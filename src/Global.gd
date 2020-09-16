@@ -20,8 +20,8 @@ func _saveCurrentValues():
 	Save.saveValue("Upgrades", "CookieUpgrade", Global.cookieUpgrade)
 	Save.saveValue("Upgrades", "CookieUpgradeScaling", Global.cookieUpgradeScaling)
 	
-func _loadCurrentValues():
-	Save.loadValue("Main", "Cookies", Global.cookies)
-	Save.loadValue("Upgrades", "CookieUpgrade", Global.cookieUpgrade)
-	Save.loadValue("Upgrades", "CookieUpgradeScaling", Global.cookieUpgradeScaling)
+func _loadCurrentSave():
+	Global.cookies = Save.loadValue("Main", "Cookies", Global.cookies)
+	Global.cookieUpgrade = Save.loadValue("Upgrades", "CookieUpgrade", Global.cookieUpgrade)
+	Global.cookieUpgradeScaling = Save.loadValue("Upgrades", "CookieUpgradeScaling", Global.cookieUpgradeScaling)
 		

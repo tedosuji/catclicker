@@ -12,7 +12,7 @@ onready var upgradeText = $bg/upgradeCost/upgradeText
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Global._loadCurrentValues()
+	Global._loadCurrentSave()
 	silvercoin.text = str(Global.cookies)
 	upgradeText.text = str(Global.cookieUpgrade)
 

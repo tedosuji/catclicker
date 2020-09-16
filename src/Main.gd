@@ -3,7 +3,7 @@ extends Node2D
 onready var silvercoin = $bg/catcoin_0/silvercoin
 
 func _ready():
-	Global.cookies = Save.loadValue("Main","Cookies", Global.cookies)
+	Global._loadCurrentSave()
 	silvercoin.text = str(Global.cookies)
 
 func _on_catbutton_pressed():
