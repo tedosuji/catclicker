@@ -50,12 +50,8 @@ func _on_cpsUpgradeButton_pressed():
 func _subtractCookiesUpdate(amount):
 	Global.cookies -= amount
 	silvercoin.text = str(Global.cookies)
-	return amount*Global.cookieUpgradeScaling
+	return amount+10
 	
-	
-
-func _upgradeClickItem(value):
-	value += 1
 
 #change scene function
 func _returnToGame():

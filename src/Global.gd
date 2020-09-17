@@ -5,7 +5,7 @@ var cookies = 0
 var clickCookieUpgrade = 10
 var cpsCookieUpgrade = 10
 var cookieUpgradeScaling = 2
-var cookiesPerSecond = 1
+var cookiesPerSecond = 0
 var cookieClick = 1
 
 
@@ -16,15 +16,18 @@ func _notification(what):
 
 func _saveCurrentValues():
 	Save.saveValue("Main", "Cookies", Global.cookies)
-	Save.saveValue("Upgrades", "ClickCookieUpgrade", Global.clickCookieUpgrade)
-	Save.saveValue("Upgrades", "CpsCookieUpgrade", Global.cpsCookieUpgrade)
-	Save.saveValue("Upgrades", "CookieUpgradeScaling", Global.cookieUpgradeScaling)
-	Save.saveValue("Upgrades", "CookiesPerSecond", Global.cookiesPerSecond)
-	Save.saveValue("Upgrades", "CookieClick", Global.cookieClick)
+	Save.saveValue("Main", "CookieUpgradeScaling", Global.cookieUpgradeScaling)
+	Save.saveValue("Upgrade", "ClickCookieUpgrade", Global.clickCookieUpgrade)
+	Save.saveValue("Upgrade", "CpsCookieUpgrade", Global.cpsCookieUpgrade)
+	Save.saveValue("Passive", "CookiesPerSecond", Global.cookiesPerSecond)
+	Save.saveValue("Passive", "CookieClick", Global.cookieClick)
 	
 func _loadCurrentSave():
 	Global.cookies = Save.loadValue("Main", "Cookies", Global.cookies)
-	Global.clickCookieUpgrade = Save.loadValue("Upgrades", "ClickCookieUpgrade", Global.clickCookieUpgrade)
-	Global.cpsCookieUpgrade = Save.loadValue("Upgrades", "CpsCookieUpgrade", Global.cpsCookieUpgrade)
-	Global.cookiesPerSecond = Save.loadValue("Upgrades", "CookiesPerSecond", Global.cookiesPerSecond)
-	Global.cookieUpgradeScaling = Save.loadValue("Upgrades", "CookieUpgradeScaling", Global.cookieUpgradeScaling)
+	Global.cookieUpgradeScaling = Save.loadValue("Main", "CookieUpgradeScaling", Global.cookieUpgradeScaling)
+	Global.clickCookieUpgrade = Save.loadValue("Upgrade", "ClickCookieUpgrade", Global.clickCookieUpgrade)
+	Global.cpsCookieUpgrade = Save.loadValue("Upgrade", "CpsCookieUpgrade", Global.cpsCookieUpgrade)
+	Global.cookiesPerSecond = Save.loadValue("Passive", "CookiesPerSecond", Global.cookiesPerSecond)
+	Global.cookieClick = Save.loadValue("Passive", "CookieClick", Global.cookieClick)
+	
+	
