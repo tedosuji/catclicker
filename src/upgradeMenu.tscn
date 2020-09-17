@@ -27,6 +27,30 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="clickUpgradeText" type="Label" parent="bg"]
+margin_left = 83.9907
+margin_top = 328.645
+margin_right = 357.991
+margin_bottom = 397.645
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cpsUpgradeText" type="Label" parent="bg"]
+margin_left = -278.068
+margin_top = 320.599
+margin_right = -4.06836
+margin_bottom = 389.599
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="topbar" type="Sprite" parent="bg"]
 position = Vector2( 41.1072, 37.1508 )
 scale = Vector2( 0.731646, 0.731646 )
@@ -57,27 +81,23 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="bg/catcoin_0/silvercoin"]
 autostart = true
 
-[node name="upgradeCost" type="Sprite" parent="bg"]
-position = Vector2( -55.0832, 626.685 )
-scale = Vector2( 0.827103, 0.827103 )
-texture = ExtResource( 8 )
-
-[node name="upgradeText" type="Label" parent="bg/upgradeCost"]
-margin_left = -135.843
-margin_top = -34.4663
-margin_right = 138.157
-margin_bottom = 34.5337
-custom_fonts/font = SubResource( 1 )
-text = "0"
+[node name="clickUpgradeButton" type="TextureButton" parent="."]
+margin_left = 209.127
+margin_top = 371.031
+margin_right = 323.127
+margin_bottom = 513.031
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="upgradeButton" type="TextureButton" parent="."]
-margin_left = 188.997
-margin_top = 411.291
-margin_right = 302.997
-margin_bottom = 553.291
+[node name="cpsUpgradeButton" type="TextureButton" parent="."]
+margin_left = 19.4828
+margin_top = 364.675
+margin_right = 133.483
+margin_bottom = 506.675
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 5 )
 expand = true
@@ -96,5 +116,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="timeout" from="bg/catcoin_0/silvercoin/Timer" to="." method="_on_Timer_timeout"]
-[connection signal="pressed" from="upgradeButton" to="." method="_on_upgradeButton_pressed"]
+[connection signal="pressed" from="clickUpgradeButton" to="." method="_on_upgradeButton_pressed"]
+[connection signal="pressed" from="cpsUpgradeButton" to="." method="_on_cpsUpgradeButton_pressed"]
 [connection signal="pressed" from="returnButton" to="." method="_returnToGame"]

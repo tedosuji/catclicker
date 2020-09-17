@@ -7,7 +7,7 @@ func _ready():
 	silvercoin.text = str(Global.cookies)
 
 func _on_catbutton_pressed():
-	Global.cookies += 1
+	Global.cookies += Global.cookieClick
 	silvercoin.text = str(Global.cookies)
 
 #this is basic cookie timer increase every second
