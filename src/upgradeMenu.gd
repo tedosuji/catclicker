@@ -27,6 +27,7 @@ func _on_upgradeButton_pressed():
 	if skip == true:
 		Global.clickCookieUpgrade = _subtractCookiesUpdate(Global.clickCookieUpgrade)
 		clickUpgradeText.text = str(Global.clickCookieUpgrade)
+		Global.cookieClick += 1
 		#Global.cookieUpgradeScaling += 1
 		
 
@@ -43,6 +44,7 @@ func _on_cpsUpgradeButton_pressed():
 	if skip == true:
 		Global.cpsCookieUpgrade = _subtractCookiesUpdate(Global.cpsCookieUpgrade)
 		cpsUpgradeText.text = str(Global.cpsCookieUpgrade)
+		Global.cookiesPerSecond += 1
 		#Global.cookieUpgradeScaling += 1
 
 func _subtractCookiesUpdate(amount):
