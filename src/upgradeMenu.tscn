@@ -1,14 +1,20 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/upgradeMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/font/JoystickBold-62LA.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/sprites/cat.png" type="Texture" id=3]
-[ext_resource path="res://assets/background/background1.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/catpress.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/upgrade_bg_frame.png" type="Texture" id=4]
 [ext_resource path="res://assets/background/background2.png" type="Texture" id=6]
-[ext_resource path="res://assets/background/background3.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/upgrade_bg_container.png" type="Texture" id=7]
 [ext_resource path="res://assets/sprites/catcoin_0.png" type="Texture" id=8]
 [ext_resource path="res://assets/sprites/back_0.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/upgrade_bg.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/nextcat_0.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/upgrade_tab.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/progressbar.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/quest_tab.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/shop_tab.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/upgrade_button.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/upgrade_button_press.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -19,148 +25,22 @@ font_data = ExtResource( 2 )
 [node name="Menu" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="bg" type="Sprite" parent="."]
-position = Vector2( 164.837, 346.971 )
+[node name="upgrade_bg" type="Sprite" parent="."]
+position = Vector2( 166.561, 346.583 )
 scale = Vector2( 0.526719, 0.526719 )
-texture = ExtResource( 4 )
+texture = ExtResource( 10 )
 
-[node name="clickUpgradeText" type="Label" parent="bg"]
-margin_left = 159.174
-margin_top = -103.899
-margin_right = 281.174
-margin_bottom = -34.8986
-rect_pivot_offset = Vector2( -143.52, 148.778 )
-custom_fonts/font = SubResource( 1 )
-text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="clickUpgradeText4" type="Label" parent="bg"]
-margin_left = -62.9717
-margin_top = -105.743
-margin_right = 239.028
-margin_bottom = -36.7426
-rect_pivot_offset = Vector2( -143.52, 148.778 )
-custom_fonts/font = SubResource( 1 )
-text = "Upgrade:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="clickUpgradeText3" type="Label" parent="bg"]
-margin_left = -62.9717
-margin_top = -193.076
-margin_right = 211.029
-margin_bottom = -124.076
-rect_pivot_offset = Vector2( -143.52, 148.778 )
-custom_fonts/font = SubResource( 1 )
-text = "Pet"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="clickUpgradeText2" type="Label" parent="bg"]
-margin_left = -58.0219
-margin_top = -22.9228
-margin_right = 215.978
-margin_bottom = 46.0772
-rect_pivot_offset = Vector2( -143.52, 148.778 )
-custom_fonts/font = SubResource( 1 )
-text = "Level:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="clickLevelText" type="Label" parent="bg"]
-margin_left = 85.9772
-margin_top = -30.8233
-margin_right = 359.977
-margin_bottom = 38.1767
-rect_pivot_offset = Vector2( -143.52, 148.778 )
-custom_fonts/font = SubResource( 1 )
-text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="cpsUpgradeText3" type="Label" parent="bg"]
-margin_left = -58.0219
-margin_top = -315.299
-margin_right = 215.978
-margin_bottom = -246.299
-rect_pivot_offset = Vector2( -143.52, 148.778 )
-custom_fonts/font = SubResource( 1 )
-text = "Level:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="cpsUpgradeText" type="Label" parent="bg"]
-margin_left = 161.919
-margin_top = -401.04
-margin_right = 435.919
-margin_bottom = -332.04
-rect_pivot_offset = Vector2( -143.52, 148.778 )
-custom_fonts/font = SubResource( 1 )
-text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="cpsLevelText" type="Label" parent="bg"]
-margin_left = 89.7744
-margin_top = -311.808
-margin_right = 363.774
-margin_bottom = -242.808
-rect_pivot_offset = Vector2( -143.52, 148.778 )
-custom_fonts/font = SubResource( 1 )
-text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="cpsPurch" type="Label" parent="bg"]
-margin_left = -60.0
-margin_top = -399.0
-margin_right = 238.0
-margin_bottom = -330.0
-rect_pivot_offset = Vector2( -143.52, 148.778 )
-custom_fonts/font = SubResource( 1 )
-text = "Upgrade:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="cpsSkillName" type="Label" parent="bg"]
-margin_left = -59.0386
-margin_top = -478.803
-margin_right = 238.961
-margin_bottom = -409.803
-rect_pivot_offset = Vector2( -143.52, 148.778 )
-custom_fonts/font = SubResource( 1 )
-text = "Fetch"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="topbar" type="Sprite" parent="bg"]
-position = Vector2( 41.1072, 37.1508 )
+[node name="topbar" type="Sprite" parent="upgrade_bg"]
+position = Vector2( 37.8347, 37.887 )
 scale = Vector2( 0.731646, 0.731646 )
 texture = ExtResource( 6 )
 
-[node name="rankbar" type="Sprite" parent="bg"]
-visible = false
-position = Vector2( 52.0031, -89.3348 )
-scale = Vector2( 0.603748, 0.603748 )
-texture = ExtResource( 7 )
-
-[node name="catcoin_0" type="Sprite" parent="bg"]
-position = Vector2( -81.0234, -596.876 )
+[node name="catcoin_0" type="Sprite" parent="upgrade_bg"]
+position = Vector2( -4.55696, -596.14 )
 scale = Vector2( 0.827103, 0.827103 )
 texture = ExtResource( 8 )
 
-[node name="silvercoin" type="Label" parent="bg/catcoin_0"]
+[node name="silvercoin" type="Label" parent="upgrade_bg/catcoin_0"]
 margin_left = -135.843
 margin_top = -34.4663
 margin_right = 138.157
@@ -171,44 +51,206 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Timer" type="Timer" parent="bg/catcoin_0/silvercoin"]
+[node name="Timer" type="Timer" parent="upgrade_bg/catcoin_0/silvercoin"]
 autostart = true
 
-[node name="clickUpgradeButton" type="TextureButton" parent="."]
-margin_left = 8.40825
-margin_top = 241.664
-margin_right = 122.408
-margin_bottom = 383.664
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 5 )
+[node name="upgrade_bg_frame" type="Sprite" parent="."]
+position = Vector2( 179.897, 366.375 )
+scale = Vector2( 0.33068, 0.366772 )
+texture = ExtResource( 4 )
+
+[node name="clickUpgradeButton" type="TextureButton" parent="upgrade_bg_frame"]
+margin_left = -582.193
+margin_top = -413.897
+margin_right = 535.807
+margin_bottom = 976.103
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 17 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="cpsUpgradeButton" type="TextureButton" parent="."]
-margin_left = 6.53895
-margin_top = 84.4004
-margin_right = 120.539
-margin_bottom = 226.4
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 5 )
+[node name="cpsUpgradeButton" type="TextureButton" parent="upgrade_bg_frame"]
+margin_left = -576.097
+margin_top = -796.171
+margin_right = 542.903
+margin_bottom = 597.829
+texture_normal = ExtResource( 16 )
+texture_pressed = ExtResource( 17 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="upgrade_bg_container" type="Sprite" parent="upgrade_bg_frame"]
+position = Vector2( -0.115234, -394.466 )
+texture = ExtResource( 7 )
+
+[node name="upgrade_bg_container2" type="Sprite" parent="upgrade_bg_frame"]
+position = Vector2( -0.115234, -16.171 )
+texture = ExtResource( 7 )
+
+[node name="pet" type="Label" parent="upgrade_bg_frame"]
+margin_left = -88.7002
+margin_top = -37.151
+margin_right = 185.301
+margin_bottom = 31.849
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "Pet"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="clickUpgradeText" type="Label" parent="upgrade_bg_frame/pet"]
+margin_left = 370.571
+margin_top = 53.1484
+margin_right = 492.572
+margin_bottom = 122.149
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="upgrade" type="Label" parent="upgrade_bg_frame/pet"]
+visible = false
+margin_top = 87.3331
+margin_right = 302.0
+margin_bottom = 156.333
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "Upgrade:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level" type="Label" parent="upgrade_bg_frame/pet"]
+margin_left = -293.329
+margin_top = 204.895
+margin_right = -19.329
+margin_bottom = 273.895
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "Level:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="clickLevelText" type="Label" parent="upgrade_bg_frame/pet/level"]
+margin_left = 146.853
+margin_top = 4.96692
+margin_right = 420.853
+margin_bottom = 73.9669
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fetch" type="Label" parent="upgrade_bg_frame"]
+margin_left = -76.0373
+margin_top = -401.766
+margin_right = 221.962
+margin_bottom = -332.766
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "Fetch"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="upgrade" type="Label" parent="upgrade_bg_frame/fetch"]
+visible = false
+margin_left = 279.586
+margin_top = 77.9833
+margin_right = 577.586
+margin_bottom = 146.983
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "Upgrade:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level" type="Label" parent="upgrade_bg_frame/fetch"]
+margin_left = -312.675
+margin_top = 193.337
+margin_right = -38.6749
+margin_bottom = 262.337
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "Level:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cpsLevelText" type="Label" parent="upgrade_bg_frame/fetch/level"]
+margin_left = 147.796
+margin_top = 3.49106
+margin_right = 421.796
+margin_bottom = 72.4911
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cpsUpgradeText" type="Label" parent="upgrade_bg_frame/fetch"]
+margin_left = 365.542
+margin_top = 32.0692
+margin_right = 639.542
+margin_bottom = 101.069
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="nextcat_0" type="Sprite" parent="upgrade_bg_frame"]
+position = Vector2( -275.455, -319.924 )
+scale = Vector2( 1.51472, 1.36566 )
+texture = ExtResource( 11 )
+
+[node name="nextcat_1" type="Sprite" parent="upgrade_bg_frame"]
+position = Vector2( -275.455, 64.2625 )
+scale = Vector2( 1.51472, 1.36566 )
+texture = ExtResource( 11 )
+
+[node name="progressbar" type="Sprite" parent="."]
+position = Vector2( 179.754, 324.229 )
+scale = Vector2( 0.33068, 0.33068 )
+texture = ExtResource( 13 )
+
+[node name="upgrade_tab" type="Sprite" parent="."]
+position = Vector2( 179.811, 402.734 )
+scale = Vector2( 0.33068, 0.33068 )
+texture = ExtResource( 12 )
+
+[node name="shop_tab" type="Sprite" parent="upgrade_tab"]
+position = Vector2( 0.229431, 78.5994 )
+texture = ExtResource( 15 )
+
+[node name="quest_tab" type="Sprite" parent="upgrade_tab/shop_tab"]
+position = Vector2( -0.425842, 0.03479 )
+texture = ExtResource( 14 )
 
 [node name="returnButton" type="TextureButton" parent="."]
-margin_left = 248.009
-margin_top = 632.337
-margin_right = 345.009
-margin_bottom = 713.337
+margin_left = 301.0
+margin_top = 105.0
+margin_right = 345.0
+margin_bottom = 154.0
 texture_normal = ExtResource( 9 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="timeout" from="bg/catcoin_0/silvercoin/Timer" to="." method="_on_Timer_timeout"]
-[connection signal="pressed" from="clickUpgradeButton" to="." method="_on_upgradeButton_pressed"]
-[connection signal="pressed" from="cpsUpgradeButton" to="." method="_on_cpsUpgradeButton_pressed"]
+[connection signal="timeout" from="upgrade_bg/catcoin_0/silvercoin/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="upgrade_bg_frame/clickUpgradeButton" to="." method="_on_upgradeButton_pressed"]
+[connection signal="pressed" from="upgrade_bg_frame/cpsUpgradeButton" to="." method="_on_cpsUpgradeButton_pressed"]
 [connection signal="pressed" from="returnButton" to="." method="_returnToGame"]
