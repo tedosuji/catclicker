@@ -4,6 +4,8 @@ extends Node2D
 onready var silvercoin = $bg/catcoin_0/silvercoin
 onready var clickUpgradeText = $bg/clickUpgradeText
 onready var cpsUpgradeText = $bg/cpsUpgradeText
+onready var clickLevelText = $bg/clickLevelText
+onready var cpsLevelText = $bg/cpsLevelText
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -15,6 +17,8 @@ func _ready():
 	silvercoin.text = str(Global.cookies)
 	clickUpgradeText.text = str(Global.clickCookieUpgrade)
 	cpsUpgradeText.text = str(Global.cpsCookieUpgrade)
+	cpsLevelText.text = str(Global.cookiesPerSecond)
+	clickLevelText.text = str(Global.cookieClick)
 
 func _on_Timer_timeout():
 	Global.cookies += Global.cookiesPerSecond
@@ -26,8 +30,9 @@ func _on_upgradeButton_pressed():
 	var skip = _enoughCookieCheck(Global.clickCookieUpgrade)
 	if skip == true:
 		Global.clickCookieUpgrade = _subtractCookiesUpdate(Global.clickCookieUpgrade)
-		clickUpgradeText.text = str(Global.clickCookieUpgrade)
 		Global.cookieClick += 1
+		clickUpgradeText.text = str(Global.clickCookieUpgrade)
+		clickLevelText.text = str(Global.cookieClick)
 		#Global.cookieUpgradeScaling += 1
 		
 
@@ -43,8 +48,9 @@ func _on_cpsUpgradeButton_pressed():
 	var skip = _enoughCookieCheck(Global.cpsCookieUpgrade)
 	if skip == true:
 		Global.cpsCookieUpgrade = _subtractCookiesUpdate(Global.cpsCookieUpgrade)
-		cpsUpgradeText.text = str(Global.cpsCookieUpgrade)
 		Global.cookiesPerSecond += 1
+		cpsUpgradeText.text = str(Global.cpsCookieUpgrade)
+		cpsLevelText.text = str(Global.cookiesPerSecond)
 		#Global.cookieUpgradeScaling += 1
 
 func _subtractCookiesUpdate(amount):

@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/background/background2.png" type="Texture" id=6]
 [ext_resource path="res://assets/background/background3.png" type="Texture" id=7]
 [ext_resource path="res://assets/sprites/catcoin_0.png" type="Texture" id=8]
-[ext_resource path="res://assets/sprites/nextcat_0.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/back_0.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -23,15 +23,12 @@ script = ExtResource( 1 )
 position = Vector2( 164.837, 346.971 )
 scale = Vector2( 0.526719, 0.526719 )
 texture = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="clickUpgradeText" type="Label" parent="bg"]
-margin_left = 83.9907
-margin_top = 328.645
-margin_right = 357.991
-margin_bottom = 397.645
+margin_left = 159.174
+margin_top = -103.899
+margin_right = 281.174
+margin_bottom = -34.8986
 rect_pivot_offset = Vector2( -143.52, 148.778 )
 custom_fonts/font = SubResource( 1 )
 text = "0"
@@ -39,14 +36,110 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="cpsUpgradeText" type="Label" parent="bg"]
-margin_left = -278.068
-margin_top = 320.599
-margin_right = -4.06836
-margin_bottom = 389.599
+[node name="clickUpgradeText4" type="Label" parent="bg"]
+margin_left = -62.9717
+margin_top = -105.743
+margin_right = 239.028
+margin_bottom = -36.7426
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "Upgrade:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="clickUpgradeText3" type="Label" parent="bg"]
+margin_left = -62.9717
+margin_top = -193.076
+margin_right = 211.029
+margin_bottom = -124.076
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "Pet"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="clickUpgradeText2" type="Label" parent="bg"]
+margin_left = -58.0219
+margin_top = -22.9228
+margin_right = 215.978
+margin_bottom = 46.0772
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "Level:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="clickLevelText" type="Label" parent="bg"]
+margin_left = 85.9772
+margin_top = -30.8233
+margin_right = 359.977
+margin_bottom = 38.1767
 rect_pivot_offset = Vector2( -143.52, 148.778 )
 custom_fonts/font = SubResource( 1 )
 text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cpsUpgradeText3" type="Label" parent="bg"]
+margin_left = -58.0219
+margin_top = -315.299
+margin_right = 215.978
+margin_bottom = -246.299
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "Level:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cpsUpgradeText" type="Label" parent="bg"]
+margin_left = 161.919
+margin_top = -401.04
+margin_right = 435.919
+margin_bottom = -332.04
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cpsLevelText" type="Label" parent="bg"]
+margin_left = 89.7744
+margin_top = -311.808
+margin_right = 363.774
+margin_bottom = -242.808
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cpsUpgradeText2" type="Label" parent="bg"]
+margin_left = -60.0
+margin_top = -399.0
+margin_right = 238.0
+margin_bottom = -330.0
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "Upgrade:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cpsSkillName" type="Label" parent="bg"]
+margin_left = -59.0386
+margin_top = -478.803
+margin_right = 238.961
+margin_bottom = -409.803
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "Fetch"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -82,10 +175,10 @@ __meta__ = {
 autostart = true
 
 [node name="clickUpgradeButton" type="TextureButton" parent="."]
-margin_left = 209.127
-margin_top = 371.031
-margin_right = 323.127
-margin_bottom = 513.031
+margin_left = 8.40825
+margin_top = 241.664
+margin_right = 122.408
+margin_bottom = 383.664
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 5 )
 expand = true
@@ -94,10 +187,10 @@ __meta__ = {
 }
 
 [node name="cpsUpgradeButton" type="TextureButton" parent="."]
-margin_left = 19.4828
-margin_top = 364.675
-margin_right = 133.483
-margin_bottom = 506.675
+margin_left = 6.53895
+margin_top = 84.4004
+margin_right = 120.539
+margin_bottom = 226.4
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 5 )
 expand = true
