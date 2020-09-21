@@ -133,6 +133,6 @@ __meta__ = {
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="index_pressed" from="upgrademenu" to="." method="_on_shopbutton_index_pressed"]
 [connection signal="pressed" from="upgrademenu/closeshop" to="." method="_on_shopbutton_pressed"]
-[connection signal="pressed" from="shopbutton" to="." method="_on_shopbutton_pressed"]
 [connection signal="pressed" from="shopbutton" to="." method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="shopbutton" to="." method="_on_shopbutton_pressed"]
 [connection signal="pressed" from="menuButton" to="." method="_switchToUpgradeMenu"]

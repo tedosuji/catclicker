@@ -1,11 +1,11 @@
 extends Node2D
 
 #declaring text representation
-onready var silvercoin = $bg/catcoin_0/silvercoin
-onready var clickUpgradeText = $bg/clickUpgradeText
-onready var cpsUpgradeText = $bg/cpsUpgradeText
-onready var clickLevelText = $bg/clickLevelText
-onready var cpsLevelText = $bg/cpsLevelText
+onready var silvercoin = $upgrade_bg/catcoin_0/silvercoin
+onready var clickUpgradeText = $upgrade_bg_frame/pet/clickUpgradeText
+onready var cpsUpgradeText = $upgrade_bg_frame/fetch/cpsUpgradeText
+onready var clickLevelText = $upgrade_bg_frame/pet/level/clickLevelText
+onready var cpsLevelText = $upgrade_bg_frame/fetch/level/cpsLevelText
 
 
 # Called when the node enters the scene tree for the first time.
