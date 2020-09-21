@@ -5,7 +5,7 @@ var cookies = 0
 var clickCookieUpgrade = 10
 var cpsCookieUpgrade = 10
 var cookieUpgradeScaling = 2
-var cookiesPerSecond = 0
+var cookiesPerSecond = 0	
 var cookieClick = 1
 
 
