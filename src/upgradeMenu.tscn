@@ -120,7 +120,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="cpsUpgradeText2" type="Label" parent="bg"]
+[node name="cpsPurch" type="Label" parent="bg"]
 margin_left = -60.0
 margin_top = -399.0
 margin_right = 238.0

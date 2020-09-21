@@ -7,17 +7,18 @@ onready var cpsUpgradeText = $bg/cpsUpgradeText
 onready var clickLevelText = $bg/clickLevelText
 onready var cpsLevelText = $bg/cpsLevelText
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global._loadCurrentSave()
 	silvercoin.text = str(Global.cookies)
 	clickUpgradeText.text = str(Global.clickCookieUpgrade)
-	cpsUpgradeText.text = str(Global.cpsCookieUpgrade)
 	cpsLevelText.text = str(Global.cookiesPerSecond)
+	if Global.cookiesPerSecond == 0:
+		Global.cpsCookieUpgrade = 100
+		cpsUpgradeText.text = str(Global.cpsCookieUpgrade)
+	else:
+		cpsUpgradeText.text = str(Global.cpsCookieUpgrade)
 	clickLevelText.text = str(Global.cookieClick)
 
 func _on_Timer_timeout():
@@ -29,8 +30,9 @@ func _on_Timer_timeout():
 func _on_upgradeButton_pressed():
 	var skip = _enoughCookieCheck(Global.clickCookieUpgrade)
 	if skip == true:
-		Global.clickCookieUpgrade = _subtractCookiesUpdate(Global.clickCookieUpgrade)
+		_subtractCookiesUpdate(Global.clickCookieUpgrade)
 		Global.cookieClick += 1
+		Global.clickCookieUpgrade = Global.cookieClick * 10
 		clickUpgradeText.text = str(Global.clickCookieUpgrade)
 		clickLevelText.text = str(Global.cookieClick)
 		#Global.cookieUpgradeScaling += 1
@@ -47,8 +49,9 @@ func _enoughCookieCheck(check):
 func _on_cpsUpgradeButton_pressed():
 	var skip = _enoughCookieCheck(Global.cpsCookieUpgrade)
 	if skip == true:
-		Global.cpsCookieUpgrade = _subtractCookiesUpdate(Global.cpsCookieUpgrade)
+		_subtractCookiesUpdate(Global.cpsCookieUpgrade)
 		Global.cookiesPerSecond += 1
+		Global.cpsCookieUpgrade = Global.cookiesPerSecond * 50
 		cpsUpgradeText.text = str(Global.cpsCookieUpgrade)
 		cpsLevelText.text = str(Global.cookiesPerSecond)
 		#Global.cookieUpgradeScaling += 1
@@ -56,7 +59,6 @@ func _on_cpsUpgradeButton_pressed():
 func _subtractCookiesUpdate(amount):
 	Global.cookies -= amount
 	silvercoin.text = str(Global.cookies)
-	return amount+10
 	
 
 #change scene function
