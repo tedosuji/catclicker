@@ -119,10 +119,10 @@ texture = ExtResource( 12 )
 position = Vector2( -0.0174561, 0.244263 )
 texture = ExtResource( 11 )
 
-[node name="menuButton" type="TextureButton" parent="."]
+[node name="upgradeButton" type="TextureButton" parent="."]
 margin_left = 1.0
-margin_top = 96.0
-margin_right = 359.0
+margin_top = 676.0
+margin_right = 119.0
 margin_bottom = 746.0
 texture_normal = ExtResource( 3 )
 expand = true
@@ -135,4 +135,4 @@ __meta__ = {
 [connection signal="pressed" from="upgrademenu/closeshop" to="." method="_on_shopbutton_pressed"]
 [connection signal="pressed" from="shopbutton" to="." method="_on_TextureButton_pressed"]
 [connection signal="pressed" from="shopbutton" to="." method="_on_shopbutton_pressed"]
-[connection signal="pressed" from="menuButton" to="." method="_switchToUpgradeMenu"]
+[connection signal="pressed" from="upgradeButton" to="." method="_switchToUpgradeMenu"]
