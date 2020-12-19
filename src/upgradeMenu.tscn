@@ -2,6 +2,7 @@
 
 [ext_resource path="res://src/upgradeMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/font/JoystickBold-62LA.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/sprites/upgrade_button_fixed.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/upgrade_bg_frame.png" type="Texture" id=4]
 [ext_resource path="res://assets/background/background2.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/upgrade_bg_container.png" type="Texture" id=7]
@@ -13,7 +14,6 @@
 [ext_resource path="res://assets/sprites/progressbar.png" type="Texture" id=13]
 [ext_resource path="res://assets/sprites/quest_tab.png" type="Texture" id=14]
 [ext_resource path="res://assets/sprites/shop_tab.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/upgrade_button.png" type="Texture" id=16]
 [ext_resource path="res://assets/sprites/upgrade_button_press.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=1]
@@ -60,11 +60,11 @@ scale = Vector2( 0.33068, 0.366772 )
 texture = ExtResource( 4 )
 
 [node name="clickUpgradeButton" type="TextureButton" parent="upgrade_bg_frame"]
-margin_left = -582.193
-margin_top = -413.897
-margin_right = 535.807
-margin_bottom = 976.103
-texture_normal = ExtResource( 16 )
+margin_left = 108.0
+margin_top = -30.0
+margin_right = 483.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 17 )
 expand = true
 __meta__ = {
@@ -72,11 +72,11 @@ __meta__ = {
 }
 
 [node name="cpsUpgradeButton" type="TextureButton" parent="upgrade_bg_frame"]
-margin_left = -576.097
-margin_top = -796.171
-margin_right = 542.903
-margin_bottom = 597.829
-texture_normal = ExtResource( 16 )
+margin_left = 108.039
+margin_top = -407.891
+margin_right = 483.039
+margin_bottom = -247.891
+texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 17 )
 expand = true
 __meta__ = {
