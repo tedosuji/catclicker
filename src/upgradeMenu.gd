@@ -29,14 +29,15 @@ func _on_Timer_timeout():
 #this function handles click upgrades
 func _on_upgradeButton_pressed():
 	var skip = _enoughCookieCheck(Global.clickCookieUpgrade)
-	if skip == true:
-		_subtractCookiesUpdate(Global.clickCookieUpgrade)
-		Global.cookieClick += 1
-		Global.clickCookieUpgrade = Global.cookieClick * 10
-		clickUpgradeText.text = str(Global.clickCookieUpgrade)
-		clickLevelText.text = str(Global.cookieClick)
-		#Global.cookieUpgradeScaling += 1
-		
+	var maxCheck = _checkClickLevel(Global.cookieClick)
+	if maxCheck == false:
+		if skip == true:
+			_subtractCookiesUpdate(Global.clickCookieUpgrade)
+			Global.cookieClick += 1
+			Global.clickCookieUpgrade = Global.cookieClick * 10
+			clickUpgradeText.text = str(Global.clickCookieUpgrade)
+			clickLevelText.text = str(Global.cookieClick)
+			#Global.cookieUpgradeScaling += 1
 
 #this function checks if there is enough Global.cookies for transactions
 func _enoughCookieCheck(check):
@@ -48,18 +49,31 @@ func _enoughCookieCheck(check):
 #this function is for the cookies per second upgrade handling
 func _on_cpsUpgradeButton_pressed():
 	var skip = _enoughCookieCheck(Global.cpsCookieUpgrade)
-	if skip == true:
-		_subtractCookiesUpdate(Global.cpsCookieUpgrade)
-		Global.cookiesPerSecond += 1
-		Global.cpsCookieUpgrade = Global.cookiesPerSecond * 50
-		cpsUpgradeText.text = str(Global.cpsCookieUpgrade)
-		cpsLevelText.text = str(Global.cookiesPerSecond)
-		#Global.cookieUpgradeScaling += 1
+	var maxCheck = _checkCPSLevel(Global.cookieClick)
+	if maxCheck == false:
+		if skip == true:
+			_subtractCookiesUpdate(Global.cpsCookieUpgrade)
+			Global.cookiesPerSecond += 1
+			Global.cpsCookieUpgrade = Global.cookiesPerSecond * 50
+			cpsUpgradeText.text = str(Global.cpsCookieUpgrade)
+			cpsLevelText.text = str(Global.cookiesPerSecond)
+			#Global.cookieUpgradeScaling += 1
 
 func _subtractCookiesUpdate(amount):
 	Global.cookies -= amount
 	silvercoin.text = str(Global.cookies)
-	
+
+func _checkClickLevel(level):
+	if level == 100:
+		return true
+	else:
+		return false
+
+func _checkCPSLevel(level):
+	if level == 100:
+		return true
+	else:
+		return false
 
 #change scene function
 func _returnToGame():
