@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://src/upgradeMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/font/JoystickBold-62LA.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/sprites/upgrade_button_fixed.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/upgrade_bg_frame.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/upgrade_buttonpress_fixed.png" type="Texture" id=5]
 [ext_resource path="res://assets/background/background2.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/upgrade_bg_container.png" type="Texture" id=7]
 [ext_resource path="res://assets/sprites/catcoin_0.png" type="Texture" id=8]
@@ -13,7 +14,6 @@
 [ext_resource path="res://assets/sprites/progressbar.png" type="Texture" id=13]
 [ext_resource path="res://assets/sprites/quest_tab.png" type="Texture" id=14]
 [ext_resource path="res://assets/sprites/shop_tab.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/upgrade_button_press.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -21,21 +21,31 @@ outline_size = 3
 outline_color = Color( 0.611765, 0.588235, 0.588235, 1 )
 font_data = ExtResource( 2 )
 
+[sub_resource type="StreamTexture" id=3]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/upgrade_button_fixed.png-fdbeb31a53cad7ebf690b3e4ddcf56d8.stex"
+
+[sub_resource type="StreamTexture" id=2]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/upgrade_buttonpress_fixed.png-dc32df52bc0c351e0b1d2f548de883d2.stex"
+
 [node name="Menu" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="upgrade_bg" type="Sprite" parent="."]
-position = Vector2( 166.561, 346.583 )
+position = Vector2( 164.837, 346.971 )
 scale = Vector2( 0.526719, 0.526719 )
 texture = ExtResource( 10 )
 
 [node name="topbar" type="Sprite" parent="upgrade_bg"]
-position = Vector2( 37.8347, 37.887 )
+position = Vector2( 41.107, 37.151 )
 scale = Vector2( 0.731646, 0.731646 )
 texture = ExtResource( 6 )
 
 [node name="catcoin_0" type="Sprite" parent="upgrade_bg"]
-position = Vector2( -4.55696, -596.14 )
+position = Vector2( -46.339, -606.444 )
 scale = Vector2( 0.827103, 0.827103 )
 texture = ExtResource( 8 )
 
@@ -53,31 +63,69 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="upgrade_bg/catcoin_0/silvercoin"]
 autostart = true
 
+[node name="progressbar" type="Sprite" parent="upgrade_bg"]
+position = Vector2( 25.705, -40.921 )
+scale = Vector2( 0.634, 0.634 )
+texture = ExtResource( 13 )
+
+[node name="upgrade_tab" type="Sprite" parent="upgrade_bg"]
+position = Vector2( 29.68, 105.869 )
+scale = Vector2( 0.627811, 0.627811 )
+z_index = 1
+texture = ExtResource( 12 )
+
+[node name="shop_tab" type="Sprite" parent="upgrade_bg"]
+position = Vector2( 29.303, 152.573 )
+scale = Vector2( 0.632, 0.632 )
+z_index = 1
+texture = ExtResource( 15 )
+
+[node name="quest_tab" type="Sprite" parent="upgrade_bg"]
+position = Vector2( 30.983, 152.573 )
+scale = Vector2( 0.632, 0.632 )
+z_index = 1
+texture = ExtResource( 14 )
+
+[node name="returnButton" type="TextureButton" parent="."]
+margin_left = 4.0
+margin_top = 649.0
+margin_right = 115.0
+margin_bottom = 719.0
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="upgrade_bg_frame" type="Sprite" parent="."]
 position = Vector2( 179.897, 366.375 )
 scale = Vector2( 0.33068, 0.366772 )
 texture = ExtResource( 4 )
 
 [node name="clickUpgradeButton" type="TextureButton" parent="upgrade_bg_frame"]
-margin_left = 108.0
-margin_top = -30.0
-margin_right = 483.0
-margin_bottom = 130.0
+margin_left = 169.275
+margin_top = -26.0
+margin_right = 429.275
+margin_bottom = 125.0
 texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 17 )
+texture_pressed = ExtResource( 5 )
 expand = true
+stretch_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="cpsUpgradeButton" type="TextureButton" parent="upgrade_bg_frame"]
-margin_left = 108.039
-margin_top = -407.891
-margin_right = 483.039
-margin_bottom = -247.891
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 17 )
+margin_left = 169.275
+margin_top = -396.0
+margin_right = 429.275
+margin_bottom = -245.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+action_mode = 0
+texture_normal = SubResource( 3 )
+texture_pressed = SubResource( 2 )
 expand = true
+stretch_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -162,6 +210,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="cpsUpgradeText" type="Label" parent="upgrade_bg_frame/fetch"]
+margin_left = 362.518
+margin_top = 42.2421
+margin_right = 484.519
+margin_bottom = 111.243
+rect_pivot_offset = Vector2( -143.52, 148.778 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="upgrade" type="Label" parent="upgrade_bg_frame/fetch"]
 visible = false
 margin_left = 279.586
@@ -199,18 +259,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="cpsUpgradeText" type="Label" parent="upgrade_bg_frame/fetch"]
-margin_left = 365.542
-margin_top = 32.0692
-margin_right = 639.542
-margin_bottom = 101.069
-rect_pivot_offset = Vector2( -143.52, 148.778 )
-custom_fonts/font = SubResource( 1 )
-text = "0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="nextcat_0" type="Sprite" parent="upgrade_bg_frame"]
 position = Vector2( -275.455, -319.924 )
 scale = Vector2( 1.51472, 1.36566 )
@@ -221,34 +269,11 @@ position = Vector2( -275.455, 64.2625 )
 scale = Vector2( 1.51472, 1.36566 )
 texture = ExtResource( 11 )
 
-[node name="progressbar" type="Sprite" parent="."]
-position = Vector2( 179.754, 324.229 )
-scale = Vector2( 0.33068, 0.33068 )
-texture = ExtResource( 13 )
-
-[node name="upgrade_tab" type="Sprite" parent="."]
-position = Vector2( 179.811, 402.734 )
-scale = Vector2( 0.33068, 0.33068 )
-texture = ExtResource( 12 )
-
-[node name="shop_tab" type="Sprite" parent="upgrade_tab"]
-position = Vector2( 0.229431, 78.5994 )
-texture = ExtResource( 15 )
-
-[node name="quest_tab" type="Sprite" parent="upgrade_tab/shop_tab"]
-position = Vector2( -0.425842, 0.03479 )
-texture = ExtResource( 14 )
-
-[node name="returnButton" type="TextureButton" parent="."]
-margin_left = 4.0
-margin_top = 649.0
-margin_right = 115.0
-margin_bottom = 719.0
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="TextureButton" type="TextureButton" parent="upgrade_bg_frame"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
 [connection signal="timeout" from="upgrade_bg/catcoin_0/silvercoin/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="returnButton" to="." method="_returnToGame"]
 [connection signal="pressed" from="upgrade_bg_frame/clickUpgradeButton" to="." method="_on_upgradeButton_pressed"]
 [connection signal="pressed" from="upgrade_bg_frame/cpsUpgradeButton" to="." method="_on_cpsUpgradeButton_pressed"]
-[connection signal="pressed" from="returnButton" to="." method="_returnToGame"]

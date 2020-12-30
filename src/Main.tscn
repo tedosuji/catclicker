@@ -53,6 +53,21 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="upgrade_tab" type="Sprite" parent="bg"]
+position = Vector2( 29.68, 152.573 )
+scale = Vector2( 0.631663, 0.631663 )
+texture = ExtResource( 3 )
+
+[node name="shop_tab" type="Sprite" parent="bg"]
+position = Vector2( 29.303, 152.573 )
+scale = Vector2( 0.631663, 0.631663 )
+texture = ExtResource( 12 )
+
+[node name="quest_tab" type="Sprite" parent="bg"]
+position = Vector2( 30.983, 152.573 )
+scale = Vector2( 0.631663, 0.631663 )
+texture = ExtResource( 11 )
+
 [node name="catbutton" type="TextureButton" parent="."]
 margin_left = 40.6335
 margin_top = 174.652
@@ -105,19 +120,6 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="upgrade_tab" type="Sprite" parent="."]
-position = Vector2( 180.47, 427.334 )
-scale = Vector2( 0.332709, 0.332709 )
-texture = ExtResource( 3 )
-
-[node name="shop_tab" type="Sprite" parent="upgrade_tab"]
-position = Vector2( -0.597046, -2.83765 )
-texture = ExtResource( 12 )
-
-[node name="quest_tab" type="Sprite" parent="upgrade_tab/shop_tab"]
-position = Vector2( -0.0174561, 0.244263 )
-texture = ExtResource( 11 )
 
 [node name="upgradeButton" type="TextureButton" parent="."]
 margin_left = 1.0
