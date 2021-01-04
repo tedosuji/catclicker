@@ -21,12 +21,12 @@ outline_size = 3
 outline_color = Color( 0.611765, 0.588235, 0.588235, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="StreamTexture" id=3]
+[sub_resource type="StreamTexture" id=2]
 resource_local_to_scene = true
 flags = 4
 load_path = "res://.import/upgrade_button_fixed.png-fdbeb31a53cad7ebf690b3e4ddcf56d8.stex"
 
-[sub_resource type="StreamTexture" id=2]
+[sub_resource type="StreamTexture" id=3]
 resource_local_to_scene = true
 flags = 4
 load_path = "res://.import/upgrade_buttonpress_fixed.png-dc32df52bc0c351e0b1d2f548de883d2.stex"
@@ -122,8 +122,8 @@ margin_bottom = -245.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 action_mode = 0
-texture_normal = SubResource( 3 )
-texture_pressed = SubResource( 2 )
+texture_normal = SubResource( 2 )
+texture_pressed = SubResource( 3 )
 expand = true
 stretch_mode = 3
 __meta__ = {
