@@ -4,8 +4,11 @@ onready var silvercoin = $bg/catcoin_0/silvercoin
 
 func _ready():
 	Global._loadCurrentSave()
-	var awayCookies = Global._calc_cookies_while_quit(Global.stoppedTime,Global.stoppedDate)
-	Global.cookies += awayCookies
+	if Global.stoppedDate != null:
+		var awayCookies = Global._calc_cookies_while_quit(Global.stoppedTime,Global.stoppedDate)
+		Global.cookies += awayCookies
+		Global.stoppedDate = null
+		Global.stoppedTime = null
 	silvercoin.text = str(Global.cookies)
 
 #this function is the main cat click, earn cookies
