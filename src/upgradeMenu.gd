@@ -2,6 +2,7 @@ extends Node2D
 
 #declaring text representation
 onready var silvercoin = $upgrade_bg/catcoin_0/silvercoin
+onready var goldcoin = $upgrade_bg/catcoin_0/goldcoin
 onready var clickUpgradeText = $upgrade_bg_frame/pet/clickUpgradeText
 onready var cpsUpgradeText = $upgrade_bg_frame/fetch/cpsUpgradeText
 onready var clickLevelText = $upgrade_bg_frame/pet/level/clickLevelText
@@ -11,7 +12,7 @@ onready var cpsLevelText = $upgrade_bg_frame/fetch/level/cpsLevelText
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global._loadCurrentSave()
-	silvercoin.text = str(Global.cookies)
+	_update_upgrade_text()
 	clickUpgradeText.text = str(Global.clickCookieUpgrade)
 	cpsLevelText.text = str(Global.cookiesPerSecond)
 	if Global.cookiesPerSecond == 0:
@@ -21,10 +22,15 @@ func _ready():
 		cpsUpgradeText.text = str(Global.cpsCookieUpgrade)
 	clickLevelText.text = str(Global.cookieClick)
 
+#this is local to upgrade menu, a function to update cookie value text
+func _update_upgrade_text():
+	silvercoin.text = str(Global.cookies)
+	goldcoin.text = str(Global.gcookies)
+
 func _on_Timer_timeout():
 	Global.cookies += Global.cookiesPerSecond
-	silvercoin.text = str(Global.cookies)
-	Save.saveValue("Main", "Cookies", Global.cookies)
+	_update_upgrade_text()
+	Global._saveCurrentValues()
 
 #this function handles click upgrades
 func _on_upgradeButton_pressed():

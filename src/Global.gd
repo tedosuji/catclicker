@@ -2,6 +2,7 @@ extends Node2D
 
 # Declare member variables here. Examples:
 var cookies = 0
+var gcookies = 0
 var clickCookieUpgrade = 10
 var cpsCookieUpgrade = 10
 var cookieUpgradeScaling = 2
@@ -18,6 +19,7 @@ func _notification(what):
 
 func _saveCurrentValues():
 	Save.saveValue("Main", "Cookies", Global.cookies)
+	Save.saveValue("Main", "Gold Cookies", Global.gcookies)
 	Save.saveValue("Main", "CookieUpgradeScaling", Global.cookieUpgradeScaling)
 	Save.saveValue("Upgrade", "ClickCookieUpgrade", Global.clickCookieUpgrade)
 	Save.saveValue("Upgrade", "CpsCookieUpgrade", Global.cpsCookieUpgrade)
@@ -28,6 +30,7 @@ func _saveCurrentValues():
 	
 func _loadCurrentSave():
 	Global.cookies = Save.loadValue("Main", "Cookies", Global.cookies)
+	Global.gcookies = Save.loadValue("Main", "Gold Cookies", Global.gcookies)
 	Global.cookieUpgradeScaling = Save.loadValue("Main", "CookieUpgradeScaling", Global.cookieUpgradeScaling)
 	Global.clickCookieUpgrade = Save.loadValue("Upgrade", "ClickCookieUpgrade", Global.clickCookieUpgrade)
 	Global.cpsCookieUpgrade = Save.loadValue("Upgrade", "CpsCookieUpgrade", Global.cpsCookieUpgrade)

@@ -63,6 +63,28 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="upgrade_bg/catcoin_0/silvercoin"]
 autostart = true
 
+[node name="goldcoin" type="Label" parent="upgrade_bg/catcoin_0"]
+margin_left = 248.24
+margin_top = -34.4663
+margin_right = 522.24
+margin_bottom = 34.5337
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="goldcoin2" type="Label" parent="upgrade_bg/catcoin_0"]
+margin_left = 248.24
+margin_top = -34.4663
+margin_right = 522.24
+margin_bottom = 34.5337
+custom_fonts/font = SubResource( 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="progressbar" type="Sprite" parent="upgrade_bg"]
 position = Vector2( 25.705, -40.921 )
 scale = Vector2( 0.634, 0.634 )
