@@ -23,8 +23,13 @@ func _on_catbutton_pressed():
 	
 #this function is the jackpot button, earn GOLD cookies
 func _on_jackpotbutton_pressed():
-#logic for jackpot goes here
-	
+#first check for if jackpot button is purchased
+#if purchased...
+#roll range 1-(100/x)
+#if max
+#yield gold coin (x, upgradeable from shop)
+#else
+#show losing animation :<
 	_update_main_text()
 
 #this is basic cookie timer increase every second
